@@ -9,7 +9,11 @@
 import UIKit
 
 class POITableViewCell: UITableViewCell {
-
+    var poi: POI? {
+        didSet{
+            
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -9,6 +9,14 @@
 import UIKit
 
 class AddPOIViewController: UIViewController {
+    
+    
+    
+    
+    
+    
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -11,7 +11,7 @@ import UIKit
 class POIsTableViewController: UIViewController {
 
     
-    var POIs: [POI] = []
+    var pois: [POI] = []
     
     
     @IBOutlet weak var UITableViewDataSource: UITableView!
@@ -21,13 +21,20 @@ class POIsTableViewController: UIViewController {
 extension POIsTableViewController : UITableViewDataSource {
 func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-    return POIs.count
+    return pois.count
     }
     
 func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    guard let tableView.dequeueReusableCell(withIdentifier: "POICell", for: indexPath) is POITableViewCell else {
-               return POITableViewCell()
-           }
+    guard let cell =  tableView.dequeueReusableCell(withIdentifier: "POICell", for: indexPath) as? POITableViewCell else {
+        return UITableViewCell()
+        
+        }
+    let poi = pois[indexPath.row]
+    
+    cell.poi = poi
+    
+    return cell
+    
 }
-
+}
 
